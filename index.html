@@ -1,265 +1,346 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tania Beauty Studio — Чернівці</title>
-    <style>
-        /* Стильний б'юті-фон та базові налаштування тексту */
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #fcf8f7; /* Трендовий пастельно-нюдовий фон */
-            color: #4a3e3d; /* М'який темний колір для гарного читання */
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TANIA BEAUTY STUDIO | Чернівці</title>
+  <style>
+    /* Головні стилі сайту */
+    :root {
+      --main-pink: #fff5f7;
+      --accent-pink: #ffb6c1;
+      --dark-pink: #d47a88;
+      --text-color: #333;
+    }
 
-        /* Головний контейнер сторінки */
-        .container {
-            max-width: 500px; /* Ідеальна ширина для перегляду з телефона */
-            margin: 0 auto;
-            padding: 25px 15px;
-            background-color: #ffffff; /* Біла картка для контенту */
-            box-shadow: 0 4px 15px rgba(220, 195, 190, 0.3);
-            border-radius: 20px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fafafa;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
 
-        /* Шапка сайту */
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+    header {
+      background: linear-gradient(135deg, #ffe4e1, #fff0f5);
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
 
-        header h1 {
-            font-size: 26px;
-            letter-spacing: 2px;
-            color: #8c6b65; /* Елегантний рожево-коричневий відтінок */
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: var(--dark-pink);
+      letter-spacing: 2px;
+    }
 
-        header p {
-            font-style: italic;
-            color: #aa908b;
-            margin-top: 0;
-            font-size: 15px;
-        }
+    .tagline {
+      font-style: italic;
+      color: #666;
+      margin-top: 10px;
+    }
 
-        /* Розділювачі секцій */
-        hr {
-            border: 0;
-            height: 1px;
-            background: #f0e2df;
-            margin: 25px 0;
-        }
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    }
 
-        /* Секція послуг та прайсу */
-        .price-section h2 {
-            font-size: 19px;
-            color: #8c6b65;
-            border-left: 3px solid #dfbca0;
-            padding-left: 10px;
-            margin-bottom: 15px;
-        }
+    h2 {
+      color: var(--dark-pink);
+      border-bottom: 2px solid var(--main-pink);
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
 
-        .price-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    /* Прайс-лист */
+    .price-list {
+      list-style: none;
+      padding: 0;
+    }
 
-        .price-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px dashed #f2eae8;
-            font-size: 15px;
-        }
+    .price-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px dashed #eee;
+    }
 
-        .price-name {
-            font-weight: 500;
-        }
+    .price-list li:last-child {
+      border-bottom: none;
+    }
 
-        .price-cost {
-            font-weight: bold;
-            color: #8c6b65;
-        }
+    .price-name { font-weight: 500; }
+    .price-value { font-weight: bold; color: var(--dark-pink); }
 
-        /* Портфоліо / Галерея робіт */
-        .portfolio-section h2 {
-            font-size: 19px;
-            color: #8c6b65;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    /* Блок про майстра */
+    .about-master {
+      background: var(--main-pink);
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Фото ставатимуть по 2 в ряд */
-            gap: 12px;
-            margin-bottom: 15px;
-        }
+    .master-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
 
-        .grid-item {
-            background-color: #fcf8f7;
-            border-radius: 12px;
-            overflow: hidden;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-        }
+    .master-photo-wrapper {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
 
-        .grid-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover; /* Обрізає фото акуратно по квадрату */
-            display: block;
-        }
+    .master-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent-pink);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
 
-        .grid-item span {
-            display: block;
-            font-size: 12px;
-            padding: 6px 4px;
-            color: #8a7370;
-        }
+    .master-info {
+      flex: 2;
+      min-width: 280px;
+    }
 
-        /* Трендові кнопки для соцмереж та месенджерів */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px;
-            margin-bottom: 12px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: transform 0.2s;
-        }
+    /* Інтерактивна галерея портфоліо */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
 
-        .btn:active {
-            transform: scale(0.98);
-        }
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      aspect-ratio: 1 / 1;
+    }
 
-        .btn-instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
-        }
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
 
-        .btn-telegram {
-            background-color: #229ED9;
-            color: white;
-        }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-        .btn-viber {
-            background-color: #7360f2;
-            color: white;
-        }
+    .gallery-item .overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(212, 122, 136, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-        .btn-phone {
-            background-color: #4ae082;
-            color: white;
-        }
+    .gallery-item:hover .overlay {
+      opacity: 1;
+    }
 
-        .location-info {
-            text-align: center;
-            font-size: 14px;
-            color: #7a6663;
-            background-color: #fefbfb;
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid #f5eae8;
-        }
-    </style>
+    .gallery-item .overlay span {
+      color: white;
+      background: rgba(0,0,0,0.6);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Модальне вікно (Lightbox) */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 8px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px; right: 30px;
+      color: #fff; font-size: 45px; cursor: pointer;
+      user-select: none;
+    }
+
+    /* Карта та Контакти */
+    .map-container {
+      margin-top: 15px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .btn-telegram { background-color: #0088cc; }
+    .btn-viber { background-color: #7360f2; }
+    .btn-phone { background-color: #4caf50; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
+  <header>
+    <h1>✨ TANIA BEAUTY ✨</h1>
+    <p class="tagline">Твій простір краси та догляду у Чернівцях</p>
+  </header>
 
-    <!-- Шапка сайту -->
-    <header>
-        <h1>✨ TANIA BEAUTY ✨</h1>
-        <p>Студія краси у м. Чернівці</p>
-    </header>
+  <!-- НОВИЙ БЛОК: ПРО МАЙСТРА -->
+  <section class="about-master">
+    <div class="master-container">
+      <div class="master-photo-wrapper">
+        <!-- Замініть Work1.jfif на фото Тетяни, якщо забажаєте -->
+        <img src="Work1.jfif" alt="Майстер Тетяна" class="master-photo">
+      </div>
+      <div class="master-info">
+        <h2>👋 Знайомство з майстром</h2>
+        <p>Привіт! Мене звати <strong>Тетяна</strong>, і я дбаю про красу ваших рук та погляду вже <strong>більше 15 років</strong>. За цей час я створила тисячі ідеальних образів!</p>
+        <p><strong>Чому обирають мене?</strong><br>
+        • Безпека понад усе: 100% стерильні інструменти.<br>
+        • Тільки сертифіковані та преміальні матеріали.<br>
+        • Індивідуальний підхід під тип шкіри та архітектуру обличчя.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Секція Прайсу -->
-    <div class="price-section">
-        <h2>💅 Манікюр та Педикюр</h2>
-        <ul class="price-list">
-            <li class="price-item"><span class="price-name">Гігієнічний манікюр</span><span class="price-cost">200 грн</span></li>
-            <li class="price-item"><span class="price-name">Манікюр + покриття гель-лаком</span><span class="price-cost">450_грн</span></li>
-            <li class="price-item"><span class="price-name">Нарощування нігтів</span><span class="price-cost">600 грн</span></li>
-            <li class="price-item"><span class="price-name">Естетичний педикюр</span><span class="price-cost">500 грн</span></li>
-        </ul>
+  <!-- ПОСЛУГИ -->
+  <section id="services">
+    <h2>💅 Манікюр та Педикюр</h2>
+    <ul class="price-list">
+      <li><span class="price-name">Гігієнічний манікюр</span><span class="price-value">200 грн</span></li>
+      <li><span class="price-name">Манікюр + покриття гель-лаком</span><span class="price-value">450 грн</span></li>
+      <li><span class="price-name">Нарощування нігтів</span><span class="price-value">600 грн</span></li>
+      <li><span class="price-name">Естетичний педикюр</span><span class="price-value">500 грн</span></li>
+    </ul>
+
+    <h2>👁 Оформлення брів та Вії</h2>
+    <ul class="price-list">
+      <li><span class="price-name">Корекція + фарбування брів</span><span class="price-value">250 грн</span></li>
+      <li><span class="price-name">Ламінування брів</span><span class="price-value">350 грн</span></li>
+      <li><span class="price-name">Ламінування вій</span><span class="price-value">400 грн</span></li>
+      <li><span class="price-name">Нарощування вій (класика / 2D)</span><span class="price-value">500/600 грн</span></li>
+    </ul>
+  </section>
+
+  <!-- ОНОВЛЕНЕ ПОРТФОЛІО (Клікай на фото, щоб відкрити) -->
+  <section id="portfolio">
+    <h2>📸 Портфоліо робіт</h2>
+    <div class="gallery-grid">
+      <!-- Фото 1 -->
+      <div class="gallery-item" onclick="openLightbox('Work1.jfif')">
+        <img src="Work1.jfif" alt="Манікюр Чернівці">
+        <div class="overlay"><span>Відкрити</span></div>
+      </div>
+      <!-- Додаткові картки. Поки що вони ведуть на ту саму картинку, але ви можете змінити назви файлів згодом -->
+      <div class="gallery-item" onclick="openLightbox('Work1.jfif')">
+        <img src="Work1.jfif" alt="Ніжний манікюр">
+        <div class="overlay"><span>Відкрити</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('Work1.jfif')">
+        <img src="Work1.jfif" alt="Брови Чернівці">
+        <div class="overlay"><span>Відкрити</span></div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('Work1.jfif')">
+        <img src="Work1.jfif" alt="Виразний погляд">
+        <div class="overlay"><span>Відкрити</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- МОДАЛЬНЕ ВІКНО ДЛЯ ПОРТФОЛІО -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img" src="" alt="Збільшене портфоліо">
+  </div>
+
+  <!-- ДЕ Я ПЕРЕБУВАЮ ТА ЗАПИС -->
+  <section id="contacts">
+    <h2>📍 Де я перебуваю?</h2>
+    <p><strong>Адреса:</strong> м. Чернівці, вул. Ярослава Мудрого, 200 (ТЦ "ЕНЕЙ" / магазин "Тайстра")</p>
+    
+    <!-- КАРТА GOOGLE MAPS -->
+    <div class="map-container">
+      <iframe src="https://google.com" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
-    <div class="price-section" style="margin-top: 20px;">
-        <h2>👁️ Оформлення брів та Вії</h2>
-        <ul class="price-list">
-            <li class="price-item"><span class="price-name">Корекція + фарбування брів</span><span class="price-cost">250 грн</span></li>
-            <li class="price-item"><span class="price-name">Ламінування брів</span><span class="price-cost">350_грн</span></li>
-            <li class="price-item"><span class="price-name">Ламінування вій</span><span class="price-cost">400 грн</span></li>
-            <li class="price-item"><span class="price-name">Нарощування вій (класика / 2D)</span><span class="price-cost">500/600 грн</span></li>
-        </ul>
+    <h2>📅 Записатись на процедуру</h2>
+    <div class="social-buttons">
+      <!-- Замініть # на справжні посилання, коли створите їх -->
+      <a href="#" class="btn btn-instagram">📸 Instagram</a>
+      <a href="#" class="btn btn-telegram">💬 Telegram</a>
+      <a href="#" class="btn btn-viber">💜 Viber</a>
+      <a href="tel:+380000000000" class="btn btn-phone">📞 Зателефонувати</a>
     </div>
+  </section>
 
-    <hr>
+  <footer>
+    <p>&copy; 2026 Tania Beauty Studio. Всі права захищені.</p>
+  </footer>
 
-    <!-- Секція Портфоліо з фотографіями -->
-    <div class="portfolio-section">
-        <h2>📸 Портфоліо робіт</h2>
-        
-        <div class="grid">
-            <!-- Перше фото (Ваш файл Work1.jfif) -->
-            <div class="grid-item">
-                <img src="Work1.jfif" alt="Манікюр Чернівці">
-                <span>Ніжний манікюр</span>
-            </div>
-            <!-- Місце для другого фото (завантажте файл як Work2.jfif або змініть назву нижче) -->
-            <div class="grid-item">
-                <img src="Work2.jfif" alt="Брови Чернівці">
-                <span>Ідеальні брови</span>
-            </div>
-            <!-- Місце для третього фото -->
-            <div class="grid-item">
-                <img src="Work3.jfif" alt="Педикюр Чернівці">
-                <span>Педикюр</span>
-            </div>
-            <!-- Місце для четвертого фото -->
-            <div class="grid-item">
-                <img src="Work4.jfif" alt="Вії Чернівці">
-                <span>Виразний погляд</span>
-            </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <!-- Локація -->
-    <div class="price-section">
-        <h2>📍 Де я перебуваю?</h2>
-        <div class="location-info">
-            <strong>📍 м. Чернівці</strong><br>
-            [Вкажіть тут ваш район, вулицю або назву салону]
-        </div>
-    </div>
-
-    <hr>
-
-    <!-- Кнопки швидкого зв'язку -->
-    <div class="price-section">
-        <h2 style="text-align: center;">📅 Записатись на процедуру</h2>
-        
-        <!-- Замініть посилання на свої профілі та номер телефону -->
-        <a href="https://instagram.com" class="btn btn-instagram" target="_blank">📸 Мій Instagram</a>
-        <a href="https://t.me" class="btn btn-telegram" target="_blank">💬 Написати у Telegram</a>
-        <a href="https://viber.click" class="btn btn-viber" target="_blank">💜 Написати у Viber</a>
-        <a href="tel:+380XXXXXXXXX" class="btn btn-phone">📞 Зателефонувати</a>
-    </div>
-
-</div>
-
-</body>
-</html>
+  <script>
+    // Функції для галереї
