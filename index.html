@@ -110,6 +110,33 @@
       min-width: 280px;
     }
 
+    /* Стилі для кнопок підкаталогів */
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background-color: #fff;
+      border: 2px solid var(--accent-pink);
+      color: var(--dark-pink);
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background-color: var(--dark-pink);
+      color: white;
+      border-color: var(--dark-pink);
+      box-shadow: 0 4px 10px rgba(214, 122, 136, 0.2);
+    }
+
     /* Інтерактивна галерея портфоліо */
     .gallery-grid {
       display: grid;
@@ -192,20 +219,7 @@
       user-select: none;
     }
 
-    /* Карта та Контакти */
-    .map-container {
-      margin-top: 15px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
-
-    .map-container iframe {
-      width: 100%;
-      height: 350px;
-      border: none;
-    }
-
+    /* Кнопки зв'язку */
     .social-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -250,12 +264,12 @@
     <p class="tagline">Твій простір краси та догляду у Чернівцях</p>
   </header>
 
-  <!-- НОВИЙ БЛОК: ПРО МАЙСТРА -->
+  <!-- БЛОК: ПРО МАЙСТРА -->
   <section class="about-master">
     <div class="master-container">
       <div class="master-photo-wrapper">
-        <!-- Замініть Work1.jfif на фото Тетяни, якщо забажаєте -->
-        <img src="Work1.jfif" alt="Майстер Тетяна" class="master-photo">
+        <!-- Завантажте фото вашого обличчя на GitHub під назвою avatar.jpg або залиште Work1.jfif -->
+        <img src="avatar.jpg" alt="Майстер Тетяна" class="master-photo" onerror="this.src='Work1.jfif';">
       </div>
       <div class="master-info">
         <h2>👋 Знайомство з майстром</h2>
@@ -268,7 +282,7 @@
     </div>
   </section>
 
-  <!-- ПОСЛУГИ -->
+  <!-- ПОСЛУГИ ТА ЦІНИ -->
   <section id="services">
     <h2>💅 Манікюр та Педикюр</h2>
     <ul class="price-list">
@@ -287,27 +301,42 @@
     </ul>
   </section>
 
-  <!-- ОНОВЛЕНЕ ПОРТФОЛІО (Клікай на фото, щоб відкрити) -->
+  <!-- ПОРТФОЛІО З КАТАЛОГАМИ -->
   <section id="portfolio">
     <h2>📸 Портфоліо робіт</h2>
+    
+    <!-- Кнопки підкаталогів -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" onclick="filterGallery('all')">✨ Усі роботи</button>
+      <button class="filter-btn" onclick="filterGallery('nails')">💅 Манікюр</button>
+      <button class="filter-btn" onclick="filterGallery('pedicure')">👣 Педикюр</button>
+      <button class="filter-btn" onclick="filterGallery('brows')">👁️ Брови та Вії</button>
+    </div>
+
+    <!-- Сітка з фотографіями -->
     <div class="gallery-grid">
-      <!-- Фото 1 -->
-      <div class="gallery-item" onclick="openLightbox('Work1.jfif')">
+      <!-- Фото Манікюру (Категорія: nails) -->
+      <div class="gallery-item" data-category="nails" onclick="openLightbox('Work1.jfif')">
         <img src="Work1.jfif" alt="Манікюр Чернівці">
-        <div class="overlay"><span>Відкрити</span></div>
+        <div class="overlay"><span>Відкрити манікюр</span></div>
       </div>
-      <!-- Додаткові картки. Поки що вони ведуть на ту саму картинку, але ви можете змінити назви файлів згодом -->
-      <div class="gallery-item" onclick="openLightbox('Work1.jfif')">
-        <img src="Work1.jfif" alt="Ніжний манікюр">
-        <div class="overlay"><span>Відкрити</span></div>
+
+      <!-- Приклад Брів (Категорія: brows) -->
+      <div class="gallery-item" data-category="brows" onclick="openLightbox('brows1.jpg')">
+        <img src="brows1.jpg" alt="Брови Чернівці" onerror="this.src='Work1.jfif';">
+        <div class="overlay"><span>Відкрити брови</span></div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('Work1.jfif')">
-        <img src="Work1.jfif" alt="Брови Чернівці">
-        <div class="overlay"><span>Відкрити</span></div>
+
+      <!-- Приклад Педикюру (Категорія: pedicure) -->
+      <div class="gallery-item" data-category="pedicure" onclick="openLightbox('pedicure1.jpg')">
+        <img src="pedicure1.jpg" alt="Педикюр Чернівці" onerror="this.src='Work1.jfif';">
+        <div class="overlay"><span>Відкрити педикюр</span></div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('Work1.jfif')">
-        <img src="Work1.jfif" alt="Виразний погляд">
-        <div class="overlay"><span>Відкрити</span></div>
+
+      <!-- Ще один Манікюр (Категорія: nails) -->
+      <div class="gallery-item" data-category="nails" onclick="openLightbox('Work1.jfif')">
+        <img src="Work1.jfif" alt="Дизайн нігтів">
+        <div class="overlay"><span>Відкрити манікюр</span></div>
       </div>
     </div>
   </section>
@@ -323,25 +352,3 @@
     <h2>📍 Де я перебуваю?</h2>
     <p><strong>Адреса:</strong> м. Чернівці, вул. Ярослава Мудрого, 200 (ТЦ "ЕНЕЙ" / магазин "Тайстра")</p>
     
-    <!-- КАРТА GOOGLE MAPS -->
-    <div class="map-container">
-      <iframe src="https://google.com" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    </div>
-
-    <h2>📅 Записатись на процедуру</h2>
-    <div class="social-buttons">
-      <!-- Замініть # на справжні посилання, коли створите їх -->
-      <a href="#" class="btn btn-instagram">📸 Instagram</a>
-      <a href="#" class="btn btn-telegram">💬 Telegram</a>
-      <a href="#" class="btn btn-viber">💜 Viber</a>
-      <a href="tel:+380000000000" class="btn btn-phone">📞 Зателефонувати</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Tania Beauty Studio. Всі права захищені.</p>
-  </footer>
-
-  <script>
-    // Функції для галереї
