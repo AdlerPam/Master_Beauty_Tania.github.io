@@ -5,270 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TANIA BEAUTY STUDIO | Чернівці</title>
   <style>
-    /* Головні стилі сайту */
     :root {
       --main-pink: #fff5f7;
       --accent-pink: #ffb6c1;
       --dark-pink: #d47a88;
       --text-color: #333;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background-color: #fafafa;
       color: var(--text-color);
       line-height: 1.6;
     }
-
     header {
       background: linear-gradient(135deg, #ffe4e1, #fff0f5);
       text-align: center;
       padding: 40px 20px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     }
-
     h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      color: var(--dark-pink);
-      letter-spacing: 2px;
+      margin: 0; font-size: 2.5rem;
+      color: var(--dark-pink); letter-spacing: 2px;
     }
-
     .tagline {
-      font-style: italic;
-      color: #666;
-      margin-top: 10px;
+      font-style: italic; color: #666; margin-top: 10px;
     }
-
     section {
-      max-width: 900px;
-      margin: 30px auto;
-      padding: 25px;
-      background: #fff;
-      border-radius: 16px;
+      max-width: 900px; margin: 30px auto; padding: 25px;
+      background: #fff; border-radius: 16px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.03);
     }
-
     h2 {
       color: var(--dark-pink);
       border-bottom: 2px solid var(--main-pink);
-      padding-bottom: 10px;
-      margin-top: 0;
+      padding-bottom: 10px; margin-top: 0;
     }
-
-    /* Прайс-лист */
-    .price-list {
-      list-style: none;
-      padding: 0;
-    }
-
+    .price-list { list-style: none; padding: 0; }
     .price-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px dashed #eee;
+      display: flex; justify-content: space-between;
+      padding: 12px 0; border-bottom: 1px dashed #eee;
     }
-
-    .price-list li:last-child {
-      border-bottom: none;
-    }
-
+    .price-list li:last-child { border-bottom: none; }
     .price-name { font-weight: 500; }
     .price-value { font-weight: bold; color: var(--dark-pink); }
-
-    /* Блок про майстра */
-    .about-master {
-      background: var(--main-pink);
-    }
-
-    .master-container {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .master-photo-wrapper {
-      flex: 1;
-      min-width: 200px;
-      text-align: center;
-    }
-
+    .about-master { background: var(--main-pink); }
+    .master-container { display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
+    .master-photo-wrapper { flex: 1; min-width: 200px; text-align: center; }
     .master-photo {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--accent-pink);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 200px; height: 200px; border-radius: 50%; object-fit: cover;
+      border: 4px solid var(--accent-pink); box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-
-    .master-info {
-      flex: 2;
-      min-width: 280px;
-    }
-
-    /* Стилі для кнопок підкаталогів */
-    .filter-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 25px;
-      flex-wrap: wrap;
-    }
-
+    .master-info { flex: 2; min-width: 280px; }
+    .filter-buttons { display: flex; justify-content: center; gap: 10px; margin-bottom: 25px; flex-wrap: wrap; }
     .filter-btn {
-      background-color: #fff;
-      border: 2px solid var(--accent-pink);
-      color: var(--dark-pink);
-      padding: 10px 20px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      background-color: #fff; border: 2px solid var(--accent-pink); color: var(--dark-pink);
+      padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;
     }
-
     .filter-btn:hover, .filter-btn.active {
-      background-color: var(--dark-pink);
-      color: white;
-      border-color: var(--dark-pink);
+      background-color: var(--dark-pink); color: white; border-color: var(--dark-pink);
       box-shadow: 0 4px 10px rgba(214, 122, 136, 0.2);
     }
-
-    /* Інтерактивна галерея портфоліо */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-    }
-
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
     .gallery-item {
-      position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-      aspect-ratio: 1 / 1;
+      position: relative; border-radius: 12px; overflow: hidden; cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: transform 0.3s ease; aspect-ratio: 1 / 1;
     }
-
-    .gallery-item:hover {
-      transform: scale(1.03);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+    .gallery-item:hover { transform: scale(1.03); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
     .gallery-item .overlay {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(212, 122, 136, 0.4);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(212, 122, 136, 0.4); display: flex; justify-content: center; align-items: center;
+      opacity: 0; transition: opacity 0.3s ease;
     }
-
-    .gallery-item:hover .overlay {
-      opacity: 1;
-    }
-
-    .gallery-item .overlay span {
-      color: white;
-      background: rgba(0,0,0,0.6);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-
-    /* Модальне вікно (Lightbox) */
+    .gallery-item:hover .overlay { opacity: 1; }
+    .gallery-item .overlay span { color: white; background: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 20px; font-size: 0.9rem; }
     .lightbox {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      transition: opacity 0.3s ease;
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9); z-index: 1000; justify-content: center; align-items: center;
+      opacity: 0; transition: opacity 0.3s ease;
     }
-
-    .lightbox.active {
-      display: flex;
-      opacity: 1;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 85%;
-      border-radius: 8px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 20px; right: 30px;
-      color: #fff; font-size: 45px; cursor: pointer;
-      user-select: none;
-    }
-
-    /* Кнопки зв'язку */
-    .social-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
+    .lightbox.active { display: flex; opacity: 1; }
+    .lightbox img { max-width: 90%; max-height: 85%; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
+    .close-btn { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 45px; cursor: pointer; user-select: none; }
+    .social-buttons { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 20px; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      padding: 12px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 30px;
+      text-decoration: none; color: white; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;
     }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    }
-
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
     .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
     .btn-telegram { background-color: #0088cc; }
     .btn-viber { background-color: #7360f2; }
     .btn-phone { background-color: #4caf50; }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #888;
-      font-size: 0.9rem;
-    }
+    footer { text-align: center; padding: 20px; color: #888; font-size: 0.9rem; }
   </style>
 </head>
 <body>
-
   <header>
     <h1>✨ TANIA BEAUTY ✨</h1>
     <p class="tagline">Твій простір краси та догляду у Чернівцях</p>
   </header>
-
-  <!-- БЛОК: ПРО МАЙСТРА -->
   <section class="about-master">
     <div class="master-container">
       <div class="master-photo-wrapper">
-        <!-- Завантажте фото вашого обличчя на GitHub під назвою avatar.jpg або залиште Work1.jfif -->
         <img src="avatar.jpg" alt="Майстер Тетяна" class="master-photo" onerror="this.src='Work1.jfif';">
       </div>
       <div class="master-info">
@@ -282,7 +122,6 @@
     </div>
   </section>
 
-  <!-- ПОСЛУГИ ТА ЦІНИ -->
   <section id="services">
     <h2>💅 Манікюр та Педикюр</h2>
     <ul class="price-list">
@@ -291,7 +130,6 @@
       <li><span class="price-name">Нарощування нігтів</span><span class="price-value">600 грн</span></li>
       <li><span class="price-name">Естетичний педикюр</span><span class="price-value">500 грн</span></li>
     </ul>
-
     <h2>👁 Оформлення брів та Вії</h2>
     <ul class="price-list">
       <li><span class="price-name">Корекція + фарбування брів</span><span class="price-value">250 грн</span></li>
@@ -301,39 +139,27 @@
     </ul>
   </section>
 
-  <!-- ПОРТФОЛІО З КАТАЛОГАМИ -->
   <section id="portfolio">
     <h2>📸 Портфоліо робіт</h2>
-    
-    <!-- Кнопки підкаталогів -->
     <div class="filter-buttons">
       <button class="filter-btn active" onclick="filterGallery('all')">✨ Усі роботи</button>
       <button class="filter-btn" onclick="filterGallery('nails')">💅 Манікюр</button>
       <button class="filter-btn" onclick="filterGallery('pedicure')">👣 Педикюр</button>
       <button class="filter-btn" onclick="filterGallery('brows')">👁️ Брови та Вії</button>
     </div>
-
-    <!-- Сітка з фотографіями -->
     <div class="gallery-grid">
-      <!-- Фото Манікюру (Категорія: nails) -->
       <div class="gallery-item" data-category="nails" onclick="openLightbox('Work1.jfif')">
         <img src="Work1.jfif" alt="Манікюр Чернівці">
         <div class="overlay"><span>Відкрити манікюр</span></div>
       </div>
-
-      <!-- Приклад Брів (Категорія: brows) -->
       <div class="gallery-item" data-category="brows" onclick="openLightbox('brows1.jpg')">
         <img src="brows1.jpg" alt="Брови Чернівці" onerror="this.src='Work1.jfif';">
         <div class="overlay"><span>Відкрити брови</span></div>
       </div>
-
-      <!-- Приклад Педикюру (Категорія: pedicure) -->
       <div class="gallery-item" data-category="pedicure" onclick="openLightbox('pedicure1.jpg')">
         <img src="pedicure1.jpg" alt="Педикюр Чернівці" onerror="this.src='Work1.jfif';">
         <div class="overlay"><span>Відкрити педикюр</span></div>
       </div>
-
-      <!-- Ще один Манікюр (Категорія: nails) -->
       <div class="gallery-item" data-category="nails" onclick="openLightbox('Work1.jfif')">
         <img src="Work1.jfif" alt="Дизайн нігтів">
         <div class="overlay"><span>Відкрити манікюр</span></div>
@@ -341,14 +167,55 @@
     </div>
   </section>
 
-  <!-- МОДАЛЬНЕ ВІКНО ДЛЯ ПОРТФОЛІО -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="close-btn">&times;</span>
     <img id="lightbox-img" src="" alt="Збільшене портфоліо">
   </div>
 
-  <!-- ДЕ Я ПЕРЕБУВАЮ ТА ЗАПИС -->
   <section id="contacts">
     <h2>📍 Де я перебуваю?</h2>
     <p><strong>Адреса:</strong> м. Чернівці, вул. Ярослава Мудрого, 200 (ТЦ "ЕНЕЙ" / магазин "Тайстра")</p>
-    
+    <div style="text-align: center; margin: 20px 0;">
+      <a href="https://goo.gl" target="_blank" style="display: inline-flex; align-items: center; background-color: #f44336; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(244,67,54,0.3); transition: transform 0.2s;">
+        🗺️ Відкрити маршрут на Google Картах
+      </a>
+    </div>
+    <h2>📅 Записатись на процедуру</h2>
+    <div class="social-buttons">
+      <a href="#" class="btn btn-instagram">📸 Instagram</a>
+      <a href="#" class="btn btn-telegram">💬 Telegram</a>
+      <a href="#" class="btn btn-viber">💜 Viber</a>
+      <a href="tel:+380000000000" class="btn btn-phone">📞 Зателефонувати</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Tania Beauty Studio. Всі права захищені.</p>
+  </footer>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src; lightbox.classList.add('active');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    function filterGallery(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if(event && event.target) { event.target.classList.add('active'); }
+      const items = document.querySelectorAll('.gallery-item');
+      items.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+        if (category === 'all' || itemCategory === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
